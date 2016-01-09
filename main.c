@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
         setSteering(60);    
         }
         
-        while (getTime() > 6000){
+        while (getTime() == 6000){
         setSteering(0);
         }
         
