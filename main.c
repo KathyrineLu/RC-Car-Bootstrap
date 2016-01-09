@@ -27,39 +27,41 @@ extern GPSData GPS;
 
 int main(int argc, char** argv) {
     initTruck();
+    
+    setThrottle(0);
     while(TRUE){
         
-        while (getTime()==2000){
+        while (getTime()==3000){
             //This is how you move the car. Throttle goes from -100% to 100%. Steering goes from -100 to 100%.
             setThrottle(-40);   //Note that the first -20%/20% is a safety buffer region. Anything less than 20% is equivalent to no throttle.
             setSteering(0);
         }
             
-        while (getTime() == 5000){
-        setSteering(60);    
-        }
-        
         while (getTime() == 6000){
-        setSteering(0);
+        setSteering(0);    
         }
         
-        while (getTime() == 8000){
-        setSteering(60);    
+        while (getTime() == 7000){
+        setSteering(0);
         }
         
         while (getTime() == 9000){
+        setSteering(100);    
+        }
+        
+        while (getTime() == 10000){
         setSteering(0);
         }
         
-        while (getTime() == 11000){
-        setSteering(60);    
+        while (getTime() == 12000){
+        setSteering(100);    
         }
         
-        while (getTime() == 12000){
+        while (getTime() == 13000){
             setSteering(0);
         }
         
-        while (getTime() == 15000){
+        while (getTime() == 16000){
             setThrottle(0);
         }
     
