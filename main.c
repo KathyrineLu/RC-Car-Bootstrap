@@ -28,17 +28,50 @@ extern GPSData GPS;
 int main(int argc, char** argv) {
     initTruck();
     while(TRUE){
-        //This is how you move the car. Throttle goes from -100% to 100%. Steering goes from -100 to 100%.
-        setThrottle(0);   //Note that the first -20%/20% is a safety buffer region. Anything less than 20% is equivalent to no throttle.
+        
+        while (getTime()==2000){
+            //This is how you move the car. Throttle goes from -100% to 100%. Steering goes from -100 to 100%.
+            setThrottle(-40);   //Note that the first -20%/20% is a safety buffer region. Anything less than 20% is equivalent to no throttle.
+            setSteering(0);
+        }
+            
+        while (getTime() == 5000){
+        setSteering(60);    
+        }
+        
+        while (getTime() > 6000){
         setSteering(0);
-
-//        This is an example of how you can print the GPS time to the debugging interface.
+        }
+        
+        while (getTime() == 8000){
+        setSteering(60);    
+        }
+        
+        while (getTime() == 9000){
+        setSteering(0);
+        }
+        
+        while (getTime() == 11000){
+        setSteering(60);    
+        }
+        
+        while (getTime() == 12000){
+            setSteering(0);
+        }
+        
+        while (getTime() == 15000){
+            setThrottle(0);
+        }
+    
+    //        This is an example of how you can print the GPS time to the debugging interface.
         char str[16];
         sprintf((char *)&str, "Time: %lu", getTime());
         debug((char *)&str);
-
+    
         background();
+        }
     }
+    
     return (EXIT_SUCCESS);
 }
 
